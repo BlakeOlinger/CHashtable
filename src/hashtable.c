@@ -55,7 +55,7 @@ void cpy_key(node *n, const char *key)
 		n->key[i] = key[i];
 		if (key[i] == '\0')
 		{
-			break;
+			return;
 		}
 	}
 	n->key[KEY_SIZE] = '\0';
