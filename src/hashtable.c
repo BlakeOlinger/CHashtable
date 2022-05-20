@@ -9,7 +9,7 @@
 
 typedef struct $node
 {
-	char key[KEY_SIZE];
+	char key[KEY_SIZE + 1];
 	uint64_t value;
 	struct $node *next;
 } node;
@@ -58,6 +58,7 @@ void cpy_key(node *n, const char *key)
 			break;
 		}
 	}
+	n->key[KEY_SIZE] = '\0';
 }
 
 node *malloc_node(const char *key, uint64_t value)
